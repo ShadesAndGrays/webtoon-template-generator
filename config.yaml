@@ -1,0 +1,23 @@
+page:
+  width: 800
+  height: 1280 
+  columns: 6
+  rows: 3
+  background_color: "#ffffffff"
+  debug_color: "#ffff0000"
+
+gap:
+  size: 75
+  outline_thickness: 1
+  outline_color: 'blue'
+  color: "#ff000030"
+  color2: "#0000ff30"
+
+division:
+  size: 3
+  color: "#00000050"
+
+subdivision:
+  size: 1
+  color: "#00000050"
+  amount: 3

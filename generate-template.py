@@ -1,27 +1,38 @@
 from PIL import Image, ImageDraw, ImageColor
 from pathlib import Path
+import yaml
 
 ## Variaiable
-page_size = 800
-page_height = 1280 
+with open('config.yaml', "r") as f:
+    config = yaml.safe_load(f) or {}
 
-columns = 6
-rows = 3
+page  = config.get('page', {})
+gap  = config.get('gap', {})
 
-canvas_color="#ffffffff"
-page_debug_color ="#ffff0011"
+division  = config.get('division', {})
+subdivision  = config.get('subdivision', {})
 
-gap_size = 75
-gap_outline_thickness = 1
-gap_outline_color = 'blue'
-gap_color = "#ff000030"
-gap_color2 = "#0000ff30"
+page_size = page.get('width',800)
+page_height = page.get('height',1280) 
 
-division_size = 3
-subdivision_size = 1
-division_color = "#00000050"
-subdivision_color = "#00000050"
-subdivision_amount = 3
+columns = page.get('columns',6)
+rows = page.get('rows',3)
+
+canvas_color = page.get('background_color',"#ffffffff")
+page_debug_color = page.get('debug_color',"#ffff0011")
+
+gap_size = gap.get('size',75)
+gap_outline_thickness = gap.get('outline_thickness',1)
+gap_outline_color = gap.get('outline_color','blue')
+gap_color = gap.get('color',"#ff000030")
+gap_color2 = gap.get('color2',"#0000ff30")
+
+division_size = division.get('size',3)
+division_color = division.get('color',"#00000050")
+
+subdivision_size = subdivision.get('size',1)
+subdivision_color = subdivision.get('color',"#00000050")
+subdivision_amount = subdivision.get('amount',3)
 
 width, height =  (page_size + gap_size * 2 ) *columns, page_height * rows #4800, 3840 #800 * 6, 1280 * 3
 
