@@ -1,9 +1,13 @@
 # Webtoon Template Generator
 
-A Python-based utility to generate layout grids for Webtoon production. This tool creates a large canvas divided into columns and rows, representing multiple "pages" with customizable gaps, margins, and sub-divisions for better panel planning.
+A Python-based utility to generate layout grids for Webtoon production. This tool creates a large canvas divided into columns and rows, representing multiple "pages" with customizable gaps and sub-divisions for better panel planning.
 
 ## 2x2 Example
-<img src="images\1900x2560-W800xH1280-R2xC2.png" width="350" alt="2x2 Example image">
+
+|Template| Example|
+|:-----:|:-----:|
+| <img src="images\1900x2560-W800xH1280-R2xC2.png" height="350" alt="2x2 Generated Example Image"> | <img src="images\demo.png" height="350" alt="2x2 Usecase Example Image"> |
+
 
 ## 🎯Features
 * **Customizable Canvas:** Set page width (standard 800px) and height (standard 1280px).
@@ -28,7 +32,7 @@ Project/
 ├── splitter.py          # The page slicer
 └── output/              # (Will appear after running)
     ├── templates/       # Grid guides
-    └── final_pages/*/     # 0001.jpeg, 0002.jpeg...
+    └── final_pages/*/   # 0001.jpeg, 0002.jpeg...
 ```
 
 ## 🚀Workflow
