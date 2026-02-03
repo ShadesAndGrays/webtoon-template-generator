@@ -19,12 +19,23 @@ A Python-based utility to generate layout grids for Webtoon production. This too
    ```bash
    pip install -r requirements.txt
    ```
+  
+### Project Structure
+```
+Project/
+├── config.yaml          # Your settings
+├── generate-template.py # The grid maker
+├── splitter.py          # The page slicer
+└── output/              # (Will appear after running)
+    ├── templates/       # Grid guides
+    └── final_pages/*/     # 0001.jpeg, 0002.jpeg...
+```
 
-## 🚀Usage
+## 🚀Workflow
 
-1. Open generate-template.py in your code editor.
+This project consists of two main tools that work together using the config.yaml settings.
 
-2. Adjust the variables in the [config.yaml](config.yaml):
+1. **Configuire**: Adjust the variables in the [config.yaml](config.yaml):
 
     - page_size: The width of a single webtoon page.
 
@@ -32,12 +43,27 @@ A Python-based utility to generate layout grids for Webtoon production. This too
 
     - subdivision_amount: How many guide sections you want per page.
 
-3. Run the script:
+2. **Generate**: Run generate-template.py to create your drawing guide.
+
 ```bash
 python generate-template.py
 ```
 
-4. Find your generated PNG in the output/templates folder.
+3. **Draw**: Import the template into your drawing software (CSP, Photoshop, etc.) and draw your comic. Export the final work as png or jpeg and set the file_path in the config.toml file
+
+```yaml
+splitter:
+  file_path: 'Path/To/File' # ouput file path
+```
+
+
+4. **Split**: Run splitter.py. It will ignore the gutters (gaps) and save each page as an individual file ready for upload.
+
+```bash
+python splitter.py
+```
+
+
 
 ## ⚙️ Configuration
 
@@ -77,6 +103,13 @@ subdivision:
   size: 1                # Thickness of the guide lines
   color: "#00000050"
   amount: 3              # How many sections to split each page into
+
+splitter:
+  file_path: 'Path/To/File' # ouput file path
+  start_index: 0            # offset output file names by start_index
+  limit: 0                  # How many pages should be outputed
+  format: "jpeg"            # jpeg default
+  quality: 90               # only matters for jpeg export
 
 ```
 

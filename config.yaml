@@ -30,3 +30,10 @@ subdivision:
   size: 1                # Thickness of the guide lines
   color: "#00000050"
   amount: 3              # How many sections to split each page into
+
+splitter:
+  file_path: 'Path/To/File' # ouput file path
+  start_index: 0            # offset output file names by start_index
+  limit: 0                  # How many pages should be outputed
+  format: "jpeg"            # jpeg default
+  quality: 90               # only matters for jpeg export
