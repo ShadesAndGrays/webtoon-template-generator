@@ -57,7 +57,7 @@ for i in range(int(width/(workspace_size))):
         fill=page_debug_color
         )
 
-    page_partition_size = 800/subdivision_amount
+    page_partition_size = page_size/subdivision_amount
     for j in range(1,subdivision_amount):
         draw.line([
             (i*workspace_size) + gap_size + (page_partition_size * j),

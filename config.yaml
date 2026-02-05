@@ -5,9 +5,9 @@
 
 # Core Page Settings
 page:
-  width: 800             # Standard Webtoon width is 800px
-  height: 1280           # Standard Webtoon height per slice
-  columns: 5             # How many pages side-by-side
+  width: 1080        # Standard Webtoon width is 800px
+  height: 1350       # Standard Webtoon height per slice
+  columns: 3             # How many pages side-by-side
   rows: 3                # How many pages top-to-bottom
   background_color: "#ffffff"
   debug_color: "#ffff0000" # Background color for the page "active area"
